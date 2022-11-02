@@ -1,6 +1,0 @@
-NombreAnimal	TipoSol	     TelSolicitante
-Milu	        Adopcion     926321212
-Silvestre 		Acogida	     926321221
-Sombra			Adopcion     912342323
-Lassie	        Adopcion     926232323
-Lassie	        Acogida	     925676572
