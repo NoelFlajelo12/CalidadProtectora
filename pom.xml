@@ -11,9 +11,6 @@
   <name>CalidadProtectora</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
-	
-
-
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -28,18 +25,7 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-
-	<!-- https://mvnrepository.com/artifact/org.sonarsource.scanner.maven/sonar-maven-plugin -->
-	<dependency>
-	    <groupId>org.sonarsource.scanner.maven</groupId>
-	    <artifactId>sonar-maven-plugin</artifactId>
-	    <version>3.9.1.2184</version>
-	</dependency>
-
   </dependencies>
-
-
-
 
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
@@ -86,60 +72,4 @@
       </plugins>
     </pluginManagement>
   </build>
-
-	<profiles>
-		<profile>
-			<id>coverage</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.pitest</groupId>
-						<artifactId>pitest-maven</artifactId>
-						<version>1.6.4</version>
-						<dependencies>
-							<dependency>
-								<groupId>org.pitest</groupId>
-								<artifactId>pitest-junit5-plugin</artifactId>
-								<version>0.14</version>
-							</dependency>
-						</dependencies>
-					</plugin>
-					<plugin>
-						<groupId>org.jacoco</groupId>
-						<artifactId>jacoco-maven-plugin</artifactId>
-						<version>0.8.6</version>
-						<executions>
-							<execution>
-								<id>prepare-agent</id>
-								<goals>
-									<goal>prepare-agent</goal>
-								</goals>
-							</execution>
-							<execution>
-								<id>report</id>
-								<goals>
-									<goal>report</goal>
-								</goals>
-							</execution>
-							<execution>
-								<id>post-unit-test</id>
-								<phase>test</phase>
-								<goals>
-									<goal>report</goal>
-								</goals>
-								<configuration>
-									<dataFile>target/jacoco.exec</dataFile>
-									<outputDirectory>target/report</outputDirectory>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
-
 </project>
